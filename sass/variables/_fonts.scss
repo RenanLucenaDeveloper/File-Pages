@@ -1,0 +1,38 @@
+@use './colors';
+
+//Transforma pixels em rem
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+@mixin h1-desktop($color: colors.$preto) {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: $color;
+  line-height: toRem(43);
+}
+
+@mixin span-desktop($color: colors.$cinza) {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: $color;
+  letter-spacing: 2px;
+}
+
+@mixin p-desktop($color: colors.$branco) {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: $color;
+  line-height: toRem(22);
+  font-size: toRem(16);
+}
+
+//Botões
+
+@mixin button-desktop {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: toRem(16);
+  letter-spacing: 1px;
+}

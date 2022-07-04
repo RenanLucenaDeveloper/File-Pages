@@ -1,4 +1,6 @@
-/*Precauções anti-bug*/
+@use 'variables/animations';
+
+/* anti-bug */
 
 html {
   scroll-behavior: smooth;
@@ -13,34 +15,16 @@ html {
   padding: 0;
 }
 
-@import 'partes/pages-placement';
-@import 'partes/pages';
-
-
-
-
-/* Animations */
-
-@keyframes pointer{
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 /* Content */
 
+@import 'partes/index';
+
+/*
+
 h1 {
-  font-family: poppins;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 h1::after {
@@ -55,3 +39,12 @@ h1::after {
   animation-iteration-count: infinite;
 }
 
+*/
+
+p {
+  font-family: 'Inter', sans-serif;
+}
+
+
+@import 'partes/pages-placement';
+@import 'partes/pages';

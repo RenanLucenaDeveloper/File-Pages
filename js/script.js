@@ -1,6 +1,20 @@
+function initIndex() {
+
+  const initButton = document.querySelector('[data-slide="init"]');
+  const acceptCookies = document.querySelector('[data-cookies="accept"]');
+
+  initButton.addEventListener('click', ()=>{initPresentation()})
+
+  acceptCookies.addEventListener('click', ()=>{
+    console.log('cookies accepted')
+    
+  })
+} initIndex();
+
+//Função que inicia a criação das páginas
 function initPagesCreator() {
   
-} initPagesCreator();
+}
 
 //Função que inicia a apresentação dos slides
 function initPresentation() {
@@ -182,4 +196,4 @@ function initPresentation() {
   }
   initPageManipulation(pagesArray);
 
-} initPresentation();
+}
