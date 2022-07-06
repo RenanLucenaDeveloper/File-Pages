@@ -1,13 +1,14 @@
 @use '../variables/colors';
 @use '../variables/fonts';
 @use '../variables/buttons';
+@use '../variables/animations';
 
 body {
   background-image: url(../img/beta.svg);
   background-repeat: round;
 }
 
-h1 {
+h1#title {
   text-align: center;
   width: fit-content;
 
@@ -68,6 +69,7 @@ h1 {
   p {
     @include fonts.p-desktop;
 
+
     span {
       text-decoration: underline;
     }
@@ -80,5 +82,8 @@ h1 {
     &:hover {
       @include buttons.button-desktop-hover();
     }
+
   }
+
+
 }

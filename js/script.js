@@ -3,17 +3,55 @@ function initIndex() {
   const initButton = document.querySelector('[data-slide="init"]');
   const acceptCookies = document.querySelector('[data-cookies="accept"]');
 
-  initButton.addEventListener('click', ()=>{initPresentation()})
+  initButton.addEventListener('click', ()=>{
+    const div = document.querySelectorAll('div');
+    const h1 = document.querySelectorAll('h1');
+    console.log(div.__proto__)
+    div.forEach((item)=> {
+      item.remove();
+    })
+    h1.forEach((item)=> {
+      item.remove();
+    });
+    
+    initPagesCreator()
+  })
 
   acceptCookies.addEventListener('click', ()=>{
+    acceptCookies.innerText = 'ACEITO';
     console.log('cookies accepted')
-    
   })
 } initIndex();
 
 //Função que inicia a criação das páginas
 function initPagesCreator() {
-  
+  function PageCreate(numero){
+    this.numero = numero;
+
+    //cria a pagina e o conteudo
+    let pageSection = document.createElement('section');
+    let pageContent = document.createElement('h1');
+    pageContent.innerText = `PAGE ${numero}`;
+
+    //prepara os atributos da pagina
+    pageSection.id = `page-${numero}`;
+    pageSection.setAttribute('data', `page-${numero}`);
+
+    //adiciona a pagina ao body
+    pageSection.appendChild(pageContent);
+    document.body.appendChild(pageSection);
+  }
+
+  const numberOfPages = 4;
+
+  let i = 1
+  while(i <= numberOfPages){
+    let itemNumber = i;
+    new PageCreate(i);
+    i++
+  }
+
+  initPresentation();
 }
 
 //Função que inicia a apresentação dos slides
