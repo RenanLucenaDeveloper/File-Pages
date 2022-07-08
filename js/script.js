@@ -2,25 +2,57 @@ function initIndex() {
 
   const initButton = document.querySelector('[data-slide="init"]');
   const acceptCookies = document.querySelector('[data-cookies="accept"]');
-
+  const styleButton = document.querySelector('#dropdown-button');
+  const styleOptions = document.querySelectorAll('#dropdown-content li'); 
+  
   initButton.addEventListener('click', ()=>{
-    const div = document.querySelectorAll('div');
-    const h1 = document.querySelectorAll('h1');
-    console.log(div.__proto__)
-    div.forEach((item)=> {
-      item.remove();
-    })
-    h1.forEach((item)=> {
-      item.remove();
-    });
-    
-    initPagesCreator()
+      const div = document.querySelectorAll('div');
+      const h1 = document.querySelectorAll('h1');
+      console.log(div.__proto__)
+      div.forEach((item)=> {
+        item.remove();
+      })
+      h1.forEach((item)=> {
+        item.remove();
+      });
+      
+      initPagesCreator()
   })
+
+  styleButton.addEventListener('click', ()=> {
+    styleButton.parentElement.classList.toggle('ativo');
+  });
+
+  function initPrepareOptions(){
+    styleOptions[0].classList.add('ativo');
+
+    const correct = document.createElement('img');
+    correct.setAttribute('src', './img/ativo.svg');
+
+    styleOptions[0].appendChild(correct);
+
+    styleOptions.forEach((e)=>{
+      e.addEventListener('click', ()=> {
+  
+        let activeElement = document.querySelector('#dropdown-content .ativo');
+
+        activeElement.classList.remove('ativo');
+
+        activeElement.removeChild(correct);
+  
+        e.classList.add('ativo');
+        e.appendChild(correct);
+      })
+    })
+  } initPrepareOptions();
+
 
   acceptCookies.addEventListener('click', ()=>{
     acceptCookies.innerText = 'ACEITO';
     console.log('cookies accepted')
   })
+
+
 } initIndex();
 
 //Função que inicia a criação das páginas

@@ -21,3 +21,29 @@
 @mixin button-desktop-hover() {
   transform:scale(1.15,1.15) translate3d(0,0,0);
 }
+
+@mixin button-style-desktop() {
+  @include fonts.button-desktop();
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: colors.$cinza-semi-claro;
+  background-color: colors.$cinza-muito-escuro;
+
+  padding: 12px 20px;
+  background-clip: padding-box;
+  position: relative;
+  border-radius: 5px;
+  border: none;
+
+  &::after {
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: -4px; right: -4px;
+    background-image: conic-gradient(#FF0000, #FFC700, #9EFF00, #00FFFF, #0038FF, #AD00FF, #FF006B, #FF0000, #FF0000);
+    content: '';
+    z-index: -1;
+    border-radius: 5px;
+  }
+}

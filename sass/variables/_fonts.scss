@@ -36,3 +36,11 @@
   font-size: toRem(16);
   letter-spacing: 1px;
 }
+
+@mixin dropdown-item-desktop($color: colors.$branco) {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: toRem(14);
+  letter-spacing: 1px;
+  color: $color;
+}
