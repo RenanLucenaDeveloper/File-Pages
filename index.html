@@ -1,73 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>File Pages </title>
-</head>
-<body>
-<script src="./js/script.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>File Pages</title>
+  </head>
+  <body>
 
-<div id="dropdown">
-  <button id="dropdown-button">ESTILO <img src="./img/seta-abaixo.svg" alt="abrir menu de estilos"></button>
-  <ul id="dropdown-content">
-    <li>BETA</li>
-    <li>APPLE</li>
-    <li>DARK</li>
-  </ul>
-</div>
+    <div id="dropdown">
+      <button id="dropdown-button">
+        ESTILO <img src="./img/seta-abaixo.svg" alt="abrir menu de estilos" />
+      </button>
+      <ul id="dropdown-content">
+        <li>BETA</li>
+        <li>APPLE</li>
+        <li>DARK</li>
+      </ul>
+    </div>
 
-<h1 id="title">File-Pages <span id="beta">BETA</span> </h1>
+    <h1 id="title">File-Pages <span id="beta">BETA</span></h1>
 
+    <div id="main-div">
+      <div id="slide-showoff"></div>
+      <button data-slide="init">
+        COMEÇAR<img src="./img/seta.svg" alt="seta-começar" />
+      </button>
+    </div>
 
-<div id="main-div">
+    <div id="cookies">
+      <p>
+        Este site precisa de cookies para funcionar corretamente.
+        <span>política do uso de cookies</span>
+      </p>
 
-  <div id="slide-showoff"></div>
-  <button data-slide="init">COMEÇAR<img src="./img/seta.svg" alt="seta-começar"></button>
+      <button id="accept-cookies" data-cookies="accept">ACEITAR</button>
+    </div>
 
-</div>
-
-<div id="cookies">
-  <p>Este site precisa de cookies para funcionar corretamente. <span>política do uso de cookies</span></p>
-  
-  <button id="accept-cookies" data-cookies="accept">ACEITAR</button>
-
-</div>
-
-  <!-- Seções pré-prontas
-
-  <section data="page-1">
-    <h1>
-      PAGE 1
-    </h1>
-  </section>
-
-  <section data="page-2">
-    <h1>
-      PAGE 2
-    </h1>
-  </section>
-  
-  <section data="page-3">
-    <h1>
-      PAGE 3
-    </h1>
-  </section>
-
-  <section data="page-4">
-    <h1>
-      PAGE 4
-    </h1>
-  </section>
-
-  -->
-
-
-
-</body>
+    <script type="module" src="./js/script.js"></script>
+  </body>
 </html>

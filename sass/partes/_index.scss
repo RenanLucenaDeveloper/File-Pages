@@ -42,7 +42,6 @@ body {
 
     li {
       @include fonts.dropdown-item-desktop;
-      cursor: pointer;
 
       display: flex;
       align-items: center;
@@ -67,6 +66,10 @@ body {
 
     #dropdown-button img{
       transform: rotate(180deg);
+    }
+
+    li {
+      cursor: pointer;
     }
 
   }
