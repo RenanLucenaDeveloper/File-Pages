@@ -1,5 +1,5 @@
 export default function initChangePageStyle(styleOptions) {
-  const cssnode = document.querySelector('[data-style]');
+  const cssnode = document.querySelector('[data-style="beta"]');
 
   function disaleStylesheet(node){
     node.disabled = true
@@ -22,8 +22,9 @@ export default function initChangePageStyle(styleOptions) {
       document.documentElement.removeChild(document.querySelector('[data-alternative="true"]'));
     }
 
-    const applePromise = fetch('../css/index-apple.css');
-    const appleText = await (await applePromise).text();
+    const applePromise = fetch('../json/apple-style.json');
+    const applejson = await (await applePromise).json();
+    const appleText = applejson.style;
     const styleElement = document.createElement('style');
     styleElement.dataset.alternative = "true";
 
@@ -37,8 +38,10 @@ export default function initChangePageStyle(styleOptions) {
     if(document.querySelector('[data-alternative="true"]')){
       document.documentElement.removeChild(document.querySelector('[data-alternative="true"]'));
     }
-    const darkPromise = fetch('../css/index-dark.css');
-    const darkText = await (await darkPromise).text();
+    const darkPromise = fetch('../json/dark-style.json');
+    const darkjson = await (await darkPromise).json();
+    const darkText = darkjson.style;
+
     const styleElement = document.createElement('style');
     styleElement.dataset.alternative = "true";
 
