@@ -1,6 +1,7 @@
 import initPagesCreator from "./modules/pages-creator.js";
 import initPresentation from "./modules/presentation.js";
 import initClickOutside from "./modules/click-outside.js";
+import initChangePageStyle from "./modules/change-page-style.js";
 
 function initIndex() {
 
@@ -9,7 +10,6 @@ function initIndex() {
   const cookiesButton = document.querySelector('[data-cookies="accept"]');
   const styleOptions = document.querySelectorAll('[data-dropdown="content"]');
   const dropdown = document.querySelector('[data-dropdown="dropdown"]');
-  const dropdownItens = document.querySelectorAll('[data-dropdown="content"]');
   
   dropdown.addEventListener("click", handeClick);
   function handeClick(){
@@ -45,7 +45,7 @@ function initIndex() {
 
     styleOptions[0].__proto__.changePageStyle = function () {
       console.log(styleOptions[0].__proto__);
-    }; styleOptions[0].__proto__.changePageStyle();
+    };
 
     styleOptions.forEach((e) => {
       e.addEventListener("click", () => {
@@ -62,9 +62,11 @@ function initIndex() {
   }
   initPrepareOptions();
 
+  initChangePageStyle(styleOptions);
+
   cookiesButton.addEventListener("click", acceptCookies);
   function acceptCookies(){
-    cookiesButton.innerText = "ACEITO";
+    cookiesButton.innerText = "Aceito";
     console.log("cookies accepted");
   }
 }

@@ -1,0 +1,162 @@
+@use '../variables/colors';
+@use '../variables/fonts';
+@use '../variables/buttons';
+@use '../variables/animations';
+
+body {
+  background-image: url(../img/beta.svg);
+  background-repeat: round;
+
+}
+
+#dropdown {
+
+  z-index: 99999;
+
+  display: block;
+  position: absolute;
+
+  left: calc((100vw - 876px) / 2);
+  top: 75px;
+
+  #dropdown-button {
+    @include buttons.button-style-desktop();
+    cursor: pointer;
+
+    img {
+      transition: .2s;
+    }
+
+  }
+
+  #dropdown-content {
+    display: none;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    gap: .8rem;
+    padding: 20px 22px 20px 16px;
+
+    border-radius: 5px;
+
+    list-style: none;
+    opacity: 0;
+    background-color: colors.$cinza-muito-escuro;
+
+    li {
+      @include fonts.dropdown-item-desktop;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+    }
+
+    //animação click
+
+    transform:translate3d(0,0,0);
+    transition:transform ease-out 200ms;
+    transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    transition-duration:400ms;
+    transform:scale(0.95,0.95) translate3d(0,0,0);
+  }
+
+  &.ativo {
+
+    #dropdown-content {
+      display: flex;
+      opacity: 1;
+      transform:scale(1,1) translate3d(0,0,0);
+    }
+
+    #dropdown-button img{
+      transform: rotate(180deg);
+    }
+
+    li {
+      cursor: pointer;
+    }
+
+  }
+}
+
+h1#title {
+  text-align: center;
+  width: fit-content;
+
+  display: block;
+
+  padding: 12px 25px;
+  margin: 60px auto;
+
+  background-color: colors.$branco-puro;
+  border-radius: 5px;
+
+  font-size: fonts.toRem(40);
+  @include fonts.h1-desktop;
+
+  span {
+    font-size: fonts.toRem(16);
+    @include fonts.span-desktop;
+  }
+}
+
+#main-div {
+
+  padding: 60px 0;
+
+  background-color: colors.$preto;
+
+  button {
+    margin: 0 auto;
+
+    @include buttons.button-desktop();
+
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    img {
+      display: block;
+      width: 20px;
+      height: 10px;
+    }
+
+    &:hover {
+      @include buttons.button-desktop-hover();
+    }
+  }
+}
+
+#cookies {
+  margin: 100px auto 0;
+  padding: 30px 45px;
+  width: fit-content;
+
+  background-color: colors.$preto;
+  border-radius: 5px;
+
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  p {
+    @include fonts.p-desktop;
+
+
+    span {
+      text-decoration: underline;
+    }
+
+  }
+
+  button {
+    @include buttons.button-desktop(colors.$branco, colors.$verde);
+    
+    &:hover {
+      @include buttons.button-desktop-hover();
+    }
+
+  }
+
+
+}

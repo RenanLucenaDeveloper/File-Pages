@@ -11,18 +11,3 @@
     opacity: 1;
   }
 }
-
-@keyframes baloon-up {
-  0% {
-    transform: translate(0);
-  }
-  10% {
-    transform: translate(20px, -50px);
-  }
-  20% {
-    transform: translate(0, -100px);
-  }
-  100% {
-    transform: translate(-20px, -1080px);
-  }
-}

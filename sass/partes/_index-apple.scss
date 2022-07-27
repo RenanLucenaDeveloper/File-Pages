@@ -3,19 +3,10 @@
 @use '../variables/buttons';
 @use '../variables/animations';
 
-body {
-  background-image: url(../img/beta.svg);
-  background-repeat: round;
-
-}
-
 #dropdown {
-
   display: block;
-  position: absolute;
 
-  left: calc((100vw - 876px) / 2);
-  top: 75px;
+  margin: 40px calc((100vw - 130px) / 2);
 
   #dropdown-button {
     @include buttons.button-style-desktop();
@@ -33,6 +24,7 @@ body {
     margin-top: 1.5rem;
     gap: .8rem;
     padding: 20px 22px 20px 16px;
+    width: 130px;
 
     border-radius: 5px;
 
@@ -61,6 +53,8 @@ body {
   &.ativo {
 
     #dropdown-content {
+      z-index: 9999;
+      position: absolute;
       display: flex;
       opacity: 1;
       transform:scale(1,1) translate3d(0,0,0);
@@ -81,16 +75,18 @@ h1#title {
   text-align: center;
   width: fit-content;
 
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  padding: 12px 25px;
-  margin: 60px auto;
+  margin: 40px auto 0 auto;
+  padding-top: 40px;
+  min-width: 100vw;
 
-  background-color: colors.$branco-puro;
-  border-radius: 5px;
+  background-color: colors.$preto;
 
   font-size: fonts.toRem(40);
-  @include fonts.h1-desktop;
+  @include fonts.h1-desktop(colors.$branco);
 
   span {
     font-size: fonts.toRem(16);
@@ -107,7 +103,7 @@ h1#title {
   button {
     margin: 0 auto;
 
-    @include buttons.button-desktop();
+    @include buttons.button-desktop-apple();
 
     display: flex;
     gap: 1rem;
@@ -120,7 +116,7 @@ h1#title {
     }
 
     &:hover {
-      @include buttons.button-desktop-hover();
+      @include buttons.button-desktop-hover-apple();
     }
   }
 }
@@ -143,15 +139,16 @@ h1#title {
 
     span {
       text-decoration: underline;
+      color: colors.$azul-apple;
     }
 
   }
 
   button {
-    @include buttons.button-desktop(colors.$branco, colors.$verde);
+    @include buttons.button-desktop-apple();
     
     &:hover {
-      @include buttons.button-desktop-hover();
+      @include buttons.button-desktop-hover-apple();
     }
 
   }

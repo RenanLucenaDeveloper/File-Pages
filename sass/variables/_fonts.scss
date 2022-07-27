@@ -30,11 +30,19 @@
 
 //Botões
 
+/* standart-button-font */
 @mixin button-desktop {
   font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: toRem(16);
   letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* apple-button-font */
+@mixin button-desktop-apple {
+  font-family: 'Inter', sans-serif;
+  font-size: toRem(16);
 }
 
 @mixin dropdown-item-desktop($color: colors.$branco) {

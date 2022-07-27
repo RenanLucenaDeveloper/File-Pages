@@ -1,6 +1,7 @@
 @use './colors';
 @use './fonts';
 
+/* standart buttons */
 @mixin button-desktop($color: colors.$preto, $bg-color: colors.$cinza-claro) {
   color: $color;
   background-color: $bg-color;
@@ -46,4 +47,40 @@
     z-index: -1;
     border-radius: 5px;
   }
+}
+
+/* Apple-buttons */
+@mixin button-desktop-apple($bg-color: colors.$preto) {
+  color: colors.$azul-apple;
+  background-color: $bg-color;
+  padding: 10px 20px;
+  
+  @include fonts.button-desktop-apple;
+
+  transition:transform ease-out 200ms;
+  transition-duration:200ms;
+  cursor:pointer;
+}
+
+@mixin button-desktop-hover-apple() {
+  text-decoration: underline;
+}
+
+/* Dark-buttons */
+@mixin button-desktop-dark($color: colors.$preto, $bg-color: colors.$cinza-claro) {
+  color: colors.$branco-mais-claro;
+  background-image: linear-gradient(colors.$linear-roxo-começo, colors.$linear-roxo-final);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid colors.$borda-roxa;
+  
+  @include fonts.button-desktop;
+
+  //animação hover
+  transform:translate3d(0,0,0);
+  transition:transform ease-out 200ms;
+  transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition-duration:400ms;
+  transform:scale(1.1,1.1) translate3d(0,0,0);
+  cursor:pointer;
 }
