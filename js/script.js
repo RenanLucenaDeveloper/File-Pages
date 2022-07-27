@@ -1,16 +1,21 @@
 import initPagesCreator from "./modules/pages-creator.js";
 import initPresentation from "./modules/presentation.js";
+import initClickOutside from "./modules/click-outside.js";
 
 function initIndex() {
 
-  const styleButton = document.querySelector("#dropdown-button");
+  const styleButton = document.querySelector('[data-dropdown="button"]');
   const initButton = document.querySelector('[data-slide="init"]');
   const cookiesButton = document.querySelector('[data-cookies="accept"]');
-  const styleOptions = document.querySelectorAll("#dropdown-content li");
+  const styleOptions = document.querySelectorAll('[data-dropdown="content"]');
+  const dropdown = document.querySelector('[data-dropdown="dropdown"]');
+  const dropdownItens = document.querySelectorAll('[data-dropdown="content"]');
   
-  styleButton.addEventListener("click", toggleStyleButton);
-  function toggleStyleButton(){
-    styleButton.parentElement.classList.toggle('ativo');
+  dropdown.addEventListener("click", handeClick);
+  function handeClick(){
+    this.classList.add('ativo');
+    initClickOutside(this, styleButton, () => {
+      this.classList.remove('ativo')})
   }
 
   initButton.addEventListener("click", init);

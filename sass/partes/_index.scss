@@ -28,7 +28,7 @@ body {
   }
 
   #dropdown-content {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin-top: 1.5rem;
     gap: .8rem;
@@ -61,6 +61,7 @@ body {
   &.ativo {
 
     #dropdown-content {
+      display: flex;
       opacity: 1;
       transform:scale(1,1) translate3d(0,0,0);
     }
